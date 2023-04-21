@@ -11,6 +11,8 @@ services:
       traefik.frontend.rule: "Host: pkg.nit.so"
       traefik.frontend.entryPoints: "https"
       traefik.docker.network: "web"
+    networks:
+      - web
     volumes:
       - ./config:/config
 
