@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  dieppe:
+    image: ghcr.io/nint8835/dieppe
+    expose:
+      - 80
+    labels:
+      traefik.enable: true
+      traefik.port: 80
+      traefik.frontend.rule: "Host: pkg.nit.so"
+      traefik.frontend.entryPoints: "https"
+      traefik.docker.network: "web"
+    volumes:
+      - ./config:/config
+
+networks:
+  web:
+    external: true
