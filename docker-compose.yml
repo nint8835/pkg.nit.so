@@ -3,6 +3,7 @@ version: '3'
 services:
   dieppe:
     image: ghcr.io/nint8835/dieppe
+    restart: always
     expose:
       - 80
     labels:
